@@ -1,51 +1,33 @@
-body {
-	background-color: #eee;
-}
-
-.container {
-	width: 560px;
-	background-color: #fff;
-	margin: 0 auto;
-}
-
-header,
-section {
-	position: fixed;
-	text-align: center;
-	width: 560px;
-	background-color: #fff;
-}
-
-section {
-	top: 50px;
-}
-
-.logo {
-	width: 120px;
-	padding: 10px;
-}
-
-main {
-	padding: 370px 18px 10px;
-}
-
-article {
-	display: flex;
-	align-items: center;
-	padding: 8px 12px;
-	border: 2px solid white;
-	border-radius: 8px;
-    margin: 0 auto;
-}
-article:hover {
-		border: 2px solid #ff9999;
+#area,#submit{
+		display: block;
 	}
 
-.thumb {
+	#area{
+		margin-left: 45%;
+	}
+
+	#submit{
+		margin-left: 47.5%;
+	}
+
+	#video {
+		margin-left: 32%;
+	}
+	
+	#list{
+		margin-left: 15%;
+	}
+
+  .thumb {
+
 	height: 70px;
+
 	border-radius: 4px;
+
 }
 
 .details {
+
 	padding: 8px 22px;
+
 }
