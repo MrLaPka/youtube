@@ -4,73 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>YouTube</title>
-  <link href="style.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+   <script src="index.js"></script>
 </head>
 <body>
   <textarea id="area"></textarea>
-  <input type="submit" id="submit">
+  <input type="submit" id="submit" value="GET VIDEOS">
 <div class="container">
-<script>
-  onload = function () {
-    document.getElementById('submit').addEventListener('click',function (){
-     let txt = document.getElementById('area').value;
-     let URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${txt}&type=video&maxResults=50&key=AIzaSyCZAKn50LUgqUl-F5tx414y8683angtook`;
-
-let request = new XMLHttpRequest();
-request.open('GET', URL, true);
-
-request.onload = function() {
-   let data = JSON.parse(request.responseText);
-   let id1 = data.items[0].id.videoId;
-        mainVid(id1);
-        resultsLoop(data);
-};
-
-request.send();
-
-let crab = 0;
-  function mainVid(id) {
-    document.getElementById('video').innerHTML = `<iframe width='560' height='315' src='https://www.youtube.com/embed/${id}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>`;
-}
-function resultsLoop(data) {
-  let ls = document.getElementById('list');
-  while(ls.firstChild) {
-    ls.removeChild(ls.firstChild);
-}
-   data.items.forEach(function(item, i){
-        let thumb = item.snippet.thumbnails.medium.url;
-        let title = item.snippet.title;
-        let desc = item.snippet.description.substring(0, 100);
-        let vid = item.id.videoId;
-        let div = document.createElement('div');
-        crab++;
-        div.innerHTML =  `
-          <article class='item' id="${crab}" data-key="${vid}">
-            <img src="${thumb}" alt='' class='thumb'>
-            <div class='details'>
-              <h4>${title}</h4>
-
-              <p>${desc}</p>
-            </div>
-
-          </article>
-          `;
-  document.getElementById('list').appendChild(div);
-        });
-}
-document.addEventListener('click', function(e) {
-  let el = e ? e.target : window.event.srcElement;
-  while (el.getAttribute("data-key") === null) {
-    el = el.parentNode || el.parentElement;
-  }
-  let id = el.getAttribute("data-key");
-  console.log(id);
-    mainVid(id);
-});
-    });
-};
-</script>
 	<header>
 	</header>
 	<section id="video">
