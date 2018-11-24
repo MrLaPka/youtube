@@ -26,6 +26,10 @@
 
 }
 
+.thumb:hover{
+	cursor: pointer;
+}
+
 .details {
 
 	padding: 8px 22px;
