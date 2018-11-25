@@ -32,11 +32,19 @@ a:visited{
 	}
 
 #pagination{
-	margin-left: 41%;
+	margin-left: 30.5%;
 }
 
+.numstr{
+	display: inline-block;
+	margin-right: 3%;
+}
 
-.lipages{
+.numcolor{
+	color: red;
+}
+
+.inputpages{
 	display: inline-block;
 margin-left: 10px;
 cursor: pointer;

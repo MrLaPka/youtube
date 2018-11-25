@@ -9,7 +9,10 @@ let massVids = [];
 let vidsId = [];
 let begin;
 let end;
-let ul = document.createElement('ul');
+let form = document.createElement('form');
+let p = document.createElement('p');
+p.innerHTML = `Номер страницы: <span class = 'numcolor'><strong>1</strong></span>`;
+form.appendChild(p);
 request.onload = function() {
    let data = JSON.parse(request.responseText);
    massVids = [...data.items];
@@ -37,11 +40,17 @@ request2.send();
     counterLi++;
     vidsId[i] = massVids[i].id.videoId;
     if(counterLi%5 === 0){
-     let li = document.createElement('li');
-     li.classList.add('lipages');
-     li.innerHTML = counterLi/5;
-   li.addEventListener('click', function(){
-  end = li.innerHTML*5;
+     let input = document.createElement('input');
+     input.classList.add('inputpages');
+     input.value = counterLi/5;
+     if(input.value == 1){
+       input.checked = true;
+     }
+     input.type = 'radio';
+     input.name = 'number';
+     input.addEventListener('click', function(){
+      p.innerHTML = `Номер страницы: <span class = 'numcolor'><strong>${input.value}</strong></span>`;
+  end = input.value*5;
   begin = end-5;
   idies = vidsId.slice(begin,end).join(',');
   let statistic = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyCZAKn50LUgqUl-F5tx414y8683angtook&id=${idies}&part=snippet,statistics`;
@@ -56,11 +65,12 @@ resultsLoop(data2);
 };
 request2.send();
    });
-     ul.appendChild(li);
+   p.classList.add('numstr');
+   form.appendChild(input);
    }
   }
   
-pagination.appendChild(ul);
+pagination.appendChild(form);
 };
 
 request.send();
