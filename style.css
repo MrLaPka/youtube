@@ -1,3 +1,15 @@
+body{
+	background: url(2fons.ru-51421[1].jpg) no-repeat center center fixed;
+		   -webkit-background-size: cover;
+		   -moz-background-size: cover;
+		   -o-background-size: cover;
+		   background-size: cover;
+}
+
+a:visited{
+	color: #0000FF;
+}
+
 #area,#submit{
 		display: block;
 	}
@@ -15,23 +27,66 @@
 	}
 	
 	#list{
-		margin-left: 15%;
+		margin-left: auto;
+		margin-right: auto;
 	}
+
+#pagination{
+	margin-left: 41%;
+}
+
+
+.lipages{
+	display: inline-block;
+margin-left: 10px;
+cursor: pointer;
+}
+
+.todescription{
+	font-family: 'Comic Sans MS', serif;
+}
+
+.tochannelid{
+	font-family: 'Lucida Sans Unicode', serif;
+}
+
+.listhrefs{
+	text-decoration: none;
+}
+
+.listhrefs:hover{
+color:green;
+}
 
   .thumb {
 
 	height: 70px;
-
+	width: 125px;
 	border-radius: 4px;
 
+}
+
+.thumb:hover{
+
+	height: 90px;
+	width: 160px;
+	border-radius: 10px;	
 }
 
 .thumb:hover{
 	cursor: pointer;
 }
 
+.transition {
+	transition: 1.5s;
+  }
+
+
+.newarticles{
+border: 2px black solid;
+}
+
 .details {
 
 	padding: 8px 22px;
-
 }
